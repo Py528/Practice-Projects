@@ -26,7 +26,7 @@ body {
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: flex 0.5s ease-in;
 }
 .panel h3 {
   font-size: 23px;
@@ -37,10 +37,76 @@ body {
 }
 
 .panel.active {
-  flex: 5;
+  flex: 4;
+  border-radius: 50px;
+  border: 5px groove rgb(170, 180, 181);
+  box-shadow: 5px 2px 10px rgb(219, 230, 232);
 }
 .panel.active h3 {
   opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: black;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.blacked {
+  background-color: black;
+  box-shadow: 5px 2px 10px rgb(219, 230, 232);
+  border: 5px groove rgb(223, 252, 255);
+  transition: background-color 0.5s ease-in-out;
 }
 @media (max-width: 480px) {
   .panel:nth-of-type(4) {
