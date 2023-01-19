@@ -62,11 +62,12 @@ body {
   color: var(--before-color);
   background-color: white;
   border: 3px solid var(--before-color);
-  transition: 0.5 ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .circle.active {
   border-color: var(--after-color);
+  color: var(--after-color);
 }
 
 .btn {
