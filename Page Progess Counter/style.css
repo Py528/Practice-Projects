@@ -2,6 +2,10 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --before-color: rgb(209, 177, 205);
+  --after-color: rgb(163, 0, 146);
+}
 body {
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -22,11 +26,10 @@ body {
   font-family: inherit;
   max-width: 100%;
   width: 500px;
-  margin: 10px;
 }
 
 .progress-container::before {
-  background: rgb(209, 177, 205);
+  background: var(--before-color);
   content: '';
   position: absolute;
   width: 100%;
@@ -38,7 +41,7 @@ body {
 }
 
 .progress {
-  background: rgb(163, 0, 146);
+  background: var(--after-color);
   position: absolute;
   width: 0%;
   transform: translateY(-50%);
@@ -47,4 +50,46 @@ body {
   height: 4px;
   z-index: -1;
   transition: 0.3s ease;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--before-color);
+  background-color: white;
+  border: 3px solid var(--before-color);
+  transition: 0.5 ease-in-out;
+}
+
+.circle.active {
+  border-color: var(--after-color);
+}
+
+.btn {
+  background-color: var(--after-color);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background: var(--before-color);
+  cursor: not-allowed;
 }
