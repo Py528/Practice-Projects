@@ -18,10 +18,3 @@ let checkboxa = document.getElementById('checkbox');
 checkboxa.onclick = () => {
   document.body.classList.toggle('blacked');
 };
-// checkbox.addEventListener('change', () => {
-//   if (checkbox.checked) {
-
-//   } else {
-//     console.log('not checkbox');
-//   }
-// });

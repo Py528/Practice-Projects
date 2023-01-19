@@ -1,7 +1,9 @@
+/* Importing Roboto Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -11,10 +13,12 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
 .container {
   display: flex;
   width: 90vw;
 }
+
 .panel {
   background-size: auto 100%;
   background-position: center;
@@ -28,6 +32,7 @@ body {
   position: relative;
   transition: flex 0.5s ease-in;
 }
+
 .panel h3 {
   font-size: 23px;
   position: absolute;
@@ -42,11 +47,13 @@ body {
   border: 5px groove rgb(170, 180, 181);
   box-shadow: 5px 2px 10px rgb(219, 230, 232);
 }
+
 .panel.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
 
+/* Start - Dark mode */
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -54,12 +61,14 @@ body {
   width: 60px;
   height: 34px;
 }
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 /* The slider */
 .slider {
   position: absolute;
@@ -72,6 +81,7 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+
 .slider:before {
   position: absolute;
   content: '';
@@ -83,17 +93,21 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+
 input:checked + .slider {
   background-color: black;
 }
+
 input:focus + .slider {
   box-shadow: 0 0 1px black;
 }
+
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -108,6 +122,7 @@ input:checked + .slider:before {
   border: 5px groove rgb(223, 252, 255);
   transition: background-color 0.5s ease-in-out;
 }
+/* End Dark mode */
 @media (max-width: 480px) {
   .panel:nth-of-type(4) {
     display: none;
