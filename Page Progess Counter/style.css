@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: white;
+}
+.container {
+  text-align: center;
+}
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-family: inherit;
+  max-width: 100%;
+  width: 500px;
+  margin: 10px;
+}
+
+.progress-container::before {
+  background: rgb(209, 177, 205);
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  height: 4px;
+  z-index: -1;
+}
+
+.progress {
+  background: rgb(163, 0, 146);
+  position: absolute;
+  width: 0%;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  height: 4px;
+  z-index: -1;
+  transition: 0.3s ease;
+}
